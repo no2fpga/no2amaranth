@@ -12,10 +12,10 @@ import os
 import pkg_resources
 import tempfile
 
-from nmigen import *
-from nmigen.build import Platform
-from nmigen.lib.cdc import FFSynchronizer, PulseSynchronizer
-from nmigen.lib.fifo import SyncFIFOBuffered
+from amaranth import *
+from amaranth.build import Platform
+from amaranth.lib.cdc import FFSynchronizer, PulseSynchronizer
+from amaranth.lib.fifo import SyncFIFOBuffered
 
 
 __all__ = [ 'NitroMuAcmSync', 'NitroMuAcmAsync', 'NitroMuAcmBuffered' ]

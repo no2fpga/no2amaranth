@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 
-from nmigen import *
-from nmigen.build import *
-from nmigen_boards.icebreaker import *
+from amaranth import *
+from amaranth.build import *
+from amaranth_boards.icebreaker import *
 
-from nmigen.lib.cdc import ResetSynchronizer
+from amaranth.lib.cdc import ResetSynchronizer
 
 
-import no2nmigen
+import no2amaranth
 
 
 class LoopbackTest(Elaboratable):
@@ -68,7 +68,7 @@ class LoopbackTest(Elaboratable):
 			# Request pads with no buffers
 		usb_pads = platform.request("usb", dir={'d_p':'-','d_n':'-','pullup':'-'})
 
-		m.submodules.muacm_core = muacm = no2nmigen.NitroMuAcmBuffered(usb_pads, fifo_depth=256)
+		m.submodules.muacm_core = muacm = no2amaranth.NitroMuAcmBuffered(usb_pads, fifo_depth=256)
 
 		m.d.comb += [
 			muacm.in_data.eq(muacm.out_data),

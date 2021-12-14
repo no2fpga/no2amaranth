@@ -1,8 +1,8 @@
-Nitro cores nMigen wrappers
-===========================
+Nitro cores Amaranth HDL wrappers
+=================================
 
 This repository contains wrappers to allow to use some of the Nitro FPGA cores
-in a nMigen environment.
+in a Amaranth HDL (formerly nMigen) environment.
 
 
 Wrapped Cores
@@ -10,8 +10,8 @@ Wrapped Cores
 
 ### `no2muacm`: USB CDC ACM core
 
-This core is wrapped in 3 possible variants `no2nmigen.NitroMuAcmSync`,
-`no2nmigen.NitroMuAcmAsync` and `no2nmigen.NitroMuAcmBuffered`.
+This core is wrapped in 3 possible variants `no2amaranth.NitroMuAcmSync`,
+`no2amaranth.NitroMuAcmAsync` and `no2amaranth.NitroMuAcmBuffered`.
 
 Theses 3 variants expose the same kind of data interface, derived from
 AXI-Stream. Refer to the python docstring for the details. The `Sync` variant
