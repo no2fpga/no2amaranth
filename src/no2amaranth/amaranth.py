@@ -107,15 +107,15 @@ class NitroMuAcmSync(Elaboratable):
 	def gen_customized_ip(self, **kwargs):
 		# Load the customizer as module
 		mod_spec = importlib.util.spec_from_file_location(
-			'no2migen.no2muacm_customize',
-			pkg_resources.resource_filename('no2migen', 'cores/no2muacm-bin/muacm_customize.py')
+			'no2amaranth.no2muacm_customize',
+			pkg_resources.resource_filename('no2amaranth', 'cores/no2muacm-bin/muacm_customize.py')
 		)
 		no2muacm_customize = importlib.util.module_from_spec(mod_spec)
 		mod_spec.loader.exec_module(no2muacm_customize)
 
 		# Load source
 		sf = no2muacm_customize.MuAcmPatcher()
-		sf.load(pkg_resources.resource_filename('no2migen', 'cores/no2muacm-bin/muacm.v'))
+		sf.load(pkg_resources.resource_filename('no2amaranth', 'cores/no2muacm-bin/muacm.v'))
 
 		# Apply requested customization
 		if kwargs.get('vid') is not None:
