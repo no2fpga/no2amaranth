@@ -92,4 +92,4 @@ class LoopbackTest(Elaboratable):
 
 if __name__ == "__main__":
 	plat = ICEBreakerBitsyPlatform()
-	plat.build(LoopbackTest(), do_program=True, nextpnr_opts="--seed 1")
+	plat.build(LoopbackTest(), do_program=True, program_opts={"run_vid": "1d50", "run_pid": "6159"}, nextpnr_opts="--seed 1")
